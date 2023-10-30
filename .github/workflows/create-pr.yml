@@ -1,9 +1,7 @@
 name: Run the Action on each commit
 
 on:
-  push:
-    branches:
-      - dev
+  push
 
 jobs:
   action-pull-request:
