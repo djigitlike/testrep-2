@@ -3,7 +3,7 @@ name: Run the Action on each commit
 on:
   push:
     branches:
-      - 'dev'
+      - dev
 
 jobs:
   action-pull-request:
@@ -31,6 +31,5 @@ jobs:
           draft: true
           old_string: "<!-- Add your description here -->"
           new_string: "** Automatic pull request**"
-          get_diff: true
-          ignore_users: "dependabot"
+          get_diff: false
           allow_no_diff: false
