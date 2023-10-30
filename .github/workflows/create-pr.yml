@@ -3,7 +3,7 @@ name: Run the Action on each commit
 on:
   push:
     branches:
-      - 'dev'
+      - dev
 
 jobs:
   action-pull-request:
@@ -24,13 +24,12 @@ jobs:
           title: My pull request
           template: .github/PULL_REQUEST_TEMPLATE.md
           body: "**Automated pull request**"
-          reviewer: octocat
-          assignee: octocat
+          reviewer: djigitlike
+          assignee: djigitlike
           label: enhancement
           milestone: My milestone
           draft: true
           old_string: "<!-- Add your description here -->"
           new_string: "** Automatic pull request**"
-          get_diff: true
-          ignore_users: "dependabot"
+          get_diff: false
           allow_no_diff: false
