@@ -12,8 +12,6 @@ jobs:
       - name: Set current date as env variable
         run: echo "NOW=$(date +'%d-%m-%Y')" >> $GITHUB_ENV
       - name: Create Pull Request
-        run: gh pr create -B prod -H dev 
-          --title 'pre_release-${{NOW}}' 
-          --body 'Created by Github action'
+        run: gh pr create -B prod -H dev --title 'pre_release-${{NOW}}' --body 'Created by Github action'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
