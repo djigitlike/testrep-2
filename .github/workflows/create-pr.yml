@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          fetch-depth: '0' 
+          fetch-depth: 0
       - name: Run the Action
         uses: devops-infra/action-pull-request@v0.5.5
         with:
