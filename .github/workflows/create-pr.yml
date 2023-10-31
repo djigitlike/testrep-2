@@ -16,3 +16,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           title: Automatic pull request
+          target_branch: prod
