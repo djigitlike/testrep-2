@@ -1,19 +1,16 @@
 name: Run the Action on each commit
 
-on:
-  push:
-    branches:
-      - dev
+on: workflow_dispatch
 
 jobs:
   action-pull-request:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set current date as env variable
+        run: echo "NOW=$(date +'%d-%m-%Y')" >> $GITHUB_ENV
       - name: Create Pull Request
-        run: gh pr create -B prod -H dev --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+        run: gh pr create -B release -H dev --title 'pre_release-'$NOW --body 'This pull request was created by Github Actions' -l automated -r djigitlike -r KrisAce 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
