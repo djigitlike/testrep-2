@@ -10,12 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Run the Action
-        uses: devops-infra/action-pull-request@v0.5.5
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          title: Automatic pull request
-          target_branch: prod
+          base: prod
+          branch: dev
