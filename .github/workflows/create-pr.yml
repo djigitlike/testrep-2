@@ -11,22 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Yo yo
-        run: echo "${{ secrets.GITHUB_TOKEN }}"
       - name: Run the Action
         uses: devops-infra/action-pull-request@v0.5.5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          source_branch: dev
-          target_branch: release
-          title: My pull request
-          body: "**Automated pull request**"
-          reviewer: djigitlike
-          assignee: djigitlike
-          label: automated
-          old_string: "<!-- Add your description here -->"
-          new_string: "** Automatic pull request**"
-          get_diff: false
-          allow_no_diff: false
+          title: Automatic pull request
