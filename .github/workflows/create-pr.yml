@@ -14,7 +14,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          base: prod
-          branch: dev
+        run: gh pr create -B prod -H dev --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
