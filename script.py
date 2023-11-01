@@ -6,7 +6,7 @@ github_token = os.environ.get('GITHUB_TOKEN')
 url = 'https://api.github.com/repos/djigitlike/testrep-2/pulls?base=release'
 headers = {
     'Accept': 'application/vnd.github+json',
-    'Authorization': 'Bearer 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'
+    'Authorization': 'Bearer {github_token}'
 }
 
 resp = requests.get(url=url, headers=headers)
@@ -17,3 +17,5 @@ pr_dev_to_release_list = [pr for pr in pull_requests if pr['head']['ref'] == 'de
 # pre_release has been created by someone
 if pr_dev_to_release_list.length > 1:
     exit(1)
+=======
+exit(1)
