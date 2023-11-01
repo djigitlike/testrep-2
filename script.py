@@ -2,8 +2,6 @@ import requests
 import os
 
 github_token = os.environ.get('GITHUB_TOKEN')
-print(github_token)
-print(os.getenv('GITHUB_TOKEN'))
 
 url = 'https://api.github.com/repos/djigitlike/testrep-2/pulls?base=release'
 headers = {
@@ -13,8 +11,6 @@ headers = {
 
 resp = requests.get(url=url, headers=headers)
 pull_requests = resp.json()
-
-print(pull_requests)
 
 pr_dev_to_release_list = [pr for pr in pull_requests if pr['head']['ref'] == 'dev']
 
