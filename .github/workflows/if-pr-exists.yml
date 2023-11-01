@@ -2,7 +2,13 @@ name: Greetings
 
 on: 
   pull_request:
-    types: [opened, synchronize]
+    branches:
+      - dev
+      - release
+    types: [opened, synchronize, closed]
+  push:
+    branches:
+      - release
 
 jobs:
   build:
