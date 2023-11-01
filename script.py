@@ -16,4 +16,5 @@ pr_dev_to_release_list = [pr for pr in pull_requests if pr['head']['ref'] == 'de
 
 # pre_release has been created by someone
 if len(pr_dev_to_release_list) > 0:
+    print('Pull request from dev into release exists. Can not create a new pull request into dev!')
     exit(1)
