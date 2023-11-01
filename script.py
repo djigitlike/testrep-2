@@ -3,6 +3,7 @@ import os
 
 github_token = os.environ.get('GITHUB_TOKEN')
 print(github_token)
+print(os.getenv('GITHUB_TOKEN'))
 
 url = 'https://api.github.com/repos/djigitlike/testrep-2/pulls?base=release'
 headers = {
