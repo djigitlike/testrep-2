@@ -17,5 +17,3 @@ pr_dev_to_release_list = [pr for pr in pull_requests if pr['head']['ref'] == 'de
 # pre_release has been created by someone
 if pr_dev_to_release_list.length > 1:
     exit(1)
-=======
-exit(1)
