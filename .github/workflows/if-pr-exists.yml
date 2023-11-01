@@ -11,7 +11,7 @@ on:
       - release
 
 jobs:
-  build:
+  pre-release-check:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
