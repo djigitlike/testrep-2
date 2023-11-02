@@ -1,4 +1,4 @@
-name: Greetings
+name: No PRs into release
 
 on: 
   pull_request:
