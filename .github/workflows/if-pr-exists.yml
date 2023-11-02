@@ -1,11 +1,10 @@
-name: Greetings
+name: No PRs into release
 
 on: 
   pull_request:
     branches:
       - dev
-    types: 
-      - opened
+    types: [opened, reopened, synchronize]
 
 jobs:
   pre-release-check:
