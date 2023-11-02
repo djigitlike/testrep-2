@@ -27,5 +27,5 @@ jobs:
 
       - name: execute py script
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FINE_GRAINED_TOKEN }}
         run: python script2.py
