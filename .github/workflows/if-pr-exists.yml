@@ -4,10 +4,8 @@ on:
   pull_request:
     branches:
       - dev
-    types: [opened]
-  push:
-    branches:
-      - release
+    types: 
+      - opened
 
 jobs:
   pre-release-check:
