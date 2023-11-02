@@ -3,7 +3,7 @@ name: Update checking status for PRs into dev
 on:
   pull_request:
     branches:
-      release
+      - dev
     types: [opened, reopened, close]
 
 
@@ -13,6 +13,7 @@ jobs:
 
     steps:
       - name: checkout repo content
+        if: startsWith(github.base_ref, 'release') 
         uses: actions/checkout@v3
 
       - name: setup python
