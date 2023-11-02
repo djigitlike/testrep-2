@@ -1,15 +1,16 @@
-name: Greetings
+name: Update checking status for PRs into dev
 
-on: 
+on:
   pull_request:
     branches:
-      - dev
-    types: 
-      - opened
+      release
+    types: [opened, reopened, close]
+
 
 jobs:
-  pre-release-check:
+  greet:
     runs-on: ubuntu-latest
+
     steps:
       - name: checkout repo content
         uses: actions/checkout@v3
@@ -25,6 +26,4 @@ jobs:
           pip install requests
 
       - name: execute py script 
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python script.py
+        run: python script2.py
