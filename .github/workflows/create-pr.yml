@@ -13,4 +13,4 @@ jobs:
       - name: Create Pull Request
         run: gh pr create -B release -H dev --title 'pre_release-'$NOW --body 'This pull request was created by Github Actions' -l automated -r djigitlike -r KrisAce 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FINE_GRAINED_TOKEN }}
