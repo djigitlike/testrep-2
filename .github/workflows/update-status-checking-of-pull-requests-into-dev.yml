@@ -1,4 +1,4 @@
-name: Update checking status for PRs into dev
+name: Update status checking for PRs into dev
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ on:
 
 
 jobs:
-  greet:
+  update_status_checking:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,5 +27,5 @@ jobs:
 
       - name: execute py script
         env:
-          GITHUB_TOKEN: ${{ secrets.FINE_GRAINED_TOKEN }}
-        run: python script2.py
+          GITHUB_BOT_TOKEN: ${{ secrets.FINE_GRAINED_TOKEN }}
+        run: python python/update-status-checking-of-pull-requests-into-dev.py

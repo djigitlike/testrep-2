@@ -1,4 +1,4 @@
-name: No PRs into release
+name: Pull request into release branch exists
 
 on: 
   pull_request:
@@ -25,5 +25,5 @@ jobs:
 
       - name: execute py script 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python script.py
+          GITHUB_BOT_TOKEN: ${{ secrets.FINE_GRAINED_TOKEN }}
+        run: python python/check-pr-into-release-exists.py
