@@ -3,7 +3,7 @@ import os
 import time
 import json
 
-github_token = os.environ.get('GITHUB_TOKEN')
+github_token = os.environ.get('GITHUB_BOT_TOKEN')
 
 url = 'https://api.github.com/repos/djigitlike/testrep-2/pulls?base=dev'
 headers = {
@@ -14,6 +14,11 @@ headers = {
 
 print('Sending request to get open pull request...')
 resp = requests.get(url=url, headers=headers)
+
+if resp.status_code != 200:
+    print('Can not get open pull requests into dev. Status: {}. Reason: {}.'.format(resp.status_code, resp.content))
+    exit(1)
+
 print('Response received. Status code:  {}'.format(resp.status_code))
 
 pull_requests = resp.json()
